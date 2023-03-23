@@ -9,14 +9,14 @@ public partial class StatChart
     {
         base.OnParametersSet();
         var stats = Pokemon.GetStats(Pokemon.PersonalInfo);
-        Data = new[]
+        Data = new List<double>
         {
-            stats[(int)Stats.Hp].ToString(),
-            stats[(int)Stats.Attack].ToString(),
-            stats[(int)Stats.Defense].ToString(),
-            stats[(int)Stats.Speed].ToString(),
-            stats[(int)Stats.SpecialDefense].ToString(),
-            stats[(int)Stats.SpecialAttack].ToString(),
+            stats[(int)Stats.Hp],
+            stats[(int)Stats.Attack],
+            stats[(int)Stats.Defense],
+            stats[(int)Stats.Speed],
+            stats[(int)Stats.SpecialDefense],
+            stats[(int)Stats.SpecialAttack],
         };
     }
 
@@ -30,7 +30,7 @@ public partial class StatChart
         SpecialDefense,
     }
 
-    private string[] Data { get; set; } = Array.Empty<string>();
+    private List<double> Data { get; set; } = new List<double>();
 
     private static string[] Labels => new[]
     {
